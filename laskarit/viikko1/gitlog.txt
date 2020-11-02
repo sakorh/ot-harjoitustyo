@@ -1,0 +1,113 @@
+commit 31337d04277bf04f3fd632a2a81b3f2d3fd4e9ce
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Fri Oct 30 14:49:52 2020 +0200
+
+    muutoksia tiedostoihin
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e1ee2a95f8b3af7e2c1d85920bde9eab1f434ceb
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Fri Oct 30 14:19:45 2020 +0200
+
+    tiedostoja luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ade665104679f26899aeedf8bbb597e09a9cd7c2
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 13:58:33 2020 +0200
+
+    muutoksia tiedostoihin
+
+ eka.txt    | 6 +++---
+ kolmas.txt | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 997306fae2c9df93146fb08fa49a445dc8d22c43
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 13:30:52 2020 +0200
+
+    tiedoston uudelleennimeäminen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 03ecab054f1691bf3a61bb3da6e181269a228c19
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 13:28:47 2020 +0200
+
+    tiedoston poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit c7968ed876b6414826f50a5f2e34788fdc8fb863
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 13:25:56 2020 +0200
+
+    tiedoston muutos
+
+ tiedosto.txt | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+commit 678d3177f0fe5f3a40ce6ae516d1d7cd2c47e671
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 13:23:57 2020 +0200
+
+    tiedostoon lisäys
+
+ tiedosto.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit 24b9147438b40ef9bc3d50654b097aa6f773fa20
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 12:58:10 2020 +0200
+
+    hakemiston lisäys
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0d4dc480d46858ef991efdd3b4725aea3bb43e54
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 12:56:30 2020 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 8972b95892a1b4b1de68271e3192c13d62b94b9c
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 12:55:21 2020 +0200
+
+    tiedoston lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3cc08ff3b9ee50690c15d07b0ed63ba0cdf56c92
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 12:47:57 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 2b8e95e0e42dcee63664702ca985241265a77aa1
+Author: Salla Korhonen <salla.x.korhonen@helsinki.fi>
+Date:   Thu Oct 29 12:36:07 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
