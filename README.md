@@ -1,5 +1,6 @@
 ## Ohjelmistotekniikka, harjoitustyö
 
-*Tähän* tulee ensi viikolla linkki harjoitustyön alustavaan **määrittelydokumenttiin**.
+### Dokumentaatio
+- [Vaatimusmäärittely](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [laskarit](https://github.com/sakorh/ot-harjoitustyo/tree/master/laskarit)
