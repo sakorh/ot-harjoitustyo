@@ -2,5 +2,24 @@
 
 ### Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+- [Changelog](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
-[laskarit](https://github.com/sakorh/ot-harjoitustyo/tree/master/laskarit)
+### Pelin käynnistysohjeet
+- Siirry pygame-chess hakemistoon ja asenna tarvittavat riippuvuudet
+ ```
+poetry install
+ ```
+- Käynnistä peli
+```
+poetry run invoke start
+```
+### Testaus
+- Testit voi suorittaa komennolla:
+```
+poetry run invoke test
+```
+- Ja testikattavuusraportin saa generoitua komennolla:
+```
+poetry run invoke coverage-report
+```
