@@ -2,6 +2,7 @@
 
 ### Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Arkkitehtuurikuvaus](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
@@ -23,3 +24,8 @@ poetry run invoke test
 ```
 poetry run invoke coverage-report
 ```
+### Pylint
+- Pylint-tarkistukset voi suorittaa komennolla:
+ ```
+poetry run invoke lint
+ ```
