@@ -1,25 +1,17 @@
 import pygame
+from load_image import load_image
+
 
 class Rook(pygame.sprite.Sprite):
     def __init__(self, color, x=0, y=0):
-            super().__init__()
-        
+        super().__init__()
 
-            self.color = color
-            self.image = pygame.Surface((80,80), pygame.SRCALPHA)
-            self.image.fill((255,255,255))
+        self.color = color
+        self.image = load_image("rook", color)
 
-            self.image_loaded = pygame.image.load(f"src/assets/rook_{color}.png")
-            self.image_loaded = pygame.transform.smoothscale(self.image_loaded, (80,80), dest_surface=self.image)
+        i = 80
+        self.directions = [(0, i), (0, -i), (-i, 0), (i, 0)]
 
-            self.rect = self.image_loaded.get_rect()
-            self.rect.x = x
-            self.rect.y = y
-
-    def show_options(self, x=0, y=0):
-        options = []
-        for i in range (80,561, 80):
-            for option in [(x,y+i),(x,y-i),(x-i,y),(x+i,y)]:
-                options.append(option)
-        
-        return [o for o in options if 0 <= o[0] <= 560 and 0<=o[1]<=560]
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
