@@ -10,6 +10,7 @@
 | 5.4. | 4 | ensimmäinen testi ja koodin refaktorointia |
 | 9.4. | 4 | nappuloiden törmäysten tarkistusta ja testausta |
 | 12.4. | 4 | pylintin käyttöönotto, koodin laadun parantelua |
-| 14.2. | 2 | alustava nappuloiden syöminen |
+| 14.4. | 2 | alustava nappuloiden syöminen |
 | 15.4. | 4 | nappuloiden liikkuminen sääntöjen mukaisesti, alustava pelin päätös |
 | 16.4. | 5 | shakkitilanteiden tarkistus / pelin päättyminen, koodin refaktorointia, testausta |
+| Yhteensä: | 36 |
