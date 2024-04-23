@@ -25,7 +25,7 @@ PIECES = [[7, 3, 5, 9, 11, 5, 3, 7],
           [6, 2, 4, 8, 10, 4, 2, 6]]
 
 
-SQUARE_SIZE = 80
+SQUARE_SIZE = 90
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
     pygame.init()
 
     game_loop = GameLoop(board, Renderer(display, board),
-                         EventQueue(), Clock(), display)
+                         EventQueue(), Clock())
     game_loop.start()
 
 

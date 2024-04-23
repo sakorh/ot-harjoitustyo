@@ -18,6 +18,26 @@ class Board:
         self.queens = pygame.sprite.Group()
         self.kings = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
+        self.new_game = None
+        self._initialize_pieces()
+
+    def end_game(self, display):
+        for sprite in self.all_sprites:
+            sprite.kill()
+        green = (0, 255, 0)
+        black = (0, 0, 0)
+        font = pygame.font.Font('freesansbold.ttf', 32)
+        text = font.render('Game Over', True, green, black)
+        text_rect = text.get_rect()
+        x = y = 8*self.square_size
+        text_rect.center = (x // 2, y // 2)
+        display.blit(text, text_rect)
+        new_game_text = font.render("Start New Game", True, green, black)
+        self.new_game = new_game_text.get_rect()
+        self.new_game.center = (x // 2, (y//2)+64)
+        display.blit(new_game_text, self.new_game)
+
+    def start_game(self):
         self._initialize_pieces()
 
     def _initialize_pieces(self):
@@ -28,56 +48,48 @@ class Board:
                 normalized_y = y*self.square_size
 
                 if square == 1:
-                    pawn = Pawn("black", normalized_x, normalized_y)
-                    self.all_sprites.add(pawn)
-                    self.pawns.add(pawn)
+                    self.pawns.add(Pawn("black", self.square_size,
+                                        normalized_x, normalized_y))
                 elif square == 0:
-                    pawn = Pawn("white", normalized_x, normalized_y)
-                    self.all_sprites.add(pawn)
-                    self.pawns.add(pawn)
+                    self.pawns.add(Pawn("white", self.square_size,
+                                        normalized_x, normalized_y))
                 elif square == 7:
-                    rook = Rook("black", normalized_x, normalized_y)
-                    self.all_sprites.add(rook)
-                    self.rooks.add(rook)
+                    self.rooks.add(Rook("black", self.square_size,
+                                        normalized_x, normalized_y))
                 elif square == 6:
-                    rook = Rook("white", normalized_x, normalized_y)
-                    self.all_sprites.add(rook)
-                    self.rooks.add(rook)
+                    self.rooks.add(Rook("white", self.square_size,
+                                        normalized_x, normalized_y))
                 elif square == 3:
                     self.all_sprites.add(
-                        Knight("black", normalized_x, normalized_y))
+                        Knight("black", self.square_size, normalized_x, normalized_y))
                 elif square == 2:
                     self.all_sprites.add(
-                        Knight("white", normalized_x, normalized_y))
+                        Knight("white", self.square_size, normalized_x, normalized_y))
                 elif square == 5:
-                    bishop = Bishop("black", normalized_x, normalized_y)
-                    self.all_sprites.add(bishop)
-                    self.bishops.add(bishop)
+                    self.bishops.add(Bishop("black", self.square_size,
+                                            normalized_x, normalized_y))
                 elif square == 4:
-                    bishop = Bishop("white", normalized_x, normalized_y)
-                    self.all_sprites.add(bishop)
-                    self.bishops.add(bishop)
+                    self.bishops.add(Bishop("white", self.square_size,
+                                            normalized_x, normalized_y))
                 elif square == 9:
-                    queen = Queen("black", normalized_x, normalized_y)
-                    self.all_sprites.add(queen)
-                    self.queens.add(queen)
+                    self.queens.add(Queen("black", self.square_size,
+                                          normalized_x, normalized_y))
                 elif square == 11:
-                    king = King("black", normalized_x, normalized_y)
-                    self.all_sprites.add(king)
-                    self.kings.add(king)
+                    self.kings.add(King("black", self.square_size,
+                                        normalized_x, normalized_y))
                 elif square == 8:
-                    queen = Queen("white", normalized_x, normalized_y)
-                    self.all_sprites.add(queen)
-                    self.queens.add(queen)
+                    self.queens.add(Queen("white", self.square_size,
+                                          normalized_x, normalized_y))
                 elif square == 10:
-                    king = King("white", normalized_x, normalized_y)
-                    self.all_sprites.add(king)
-                    self.kings.add(king)
+                    self.kings.add(King("white", self.square_size,
+                                        normalized_x, normalized_y))
+        self.all_sprites.add(self.pawns, self.rooks,
+                             self.bishops, self.queens, self.kings)
 
     def draw_options(self, display, options):
         for option in options:
             pygame.draw.circle(display, (0, 255, 0),
-                               (option[0]+40, option[1]+40), 5)
+                               (option[0]+self.square_size//2, option[1]+self.square_size//2), 5)
 
     def initialize_board(self, display, board):
         height = width = len(board)
