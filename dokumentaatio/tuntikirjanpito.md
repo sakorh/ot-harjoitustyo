@@ -13,4 +13,8 @@
 | 14.4. | 2 | alustava nappuloiden syöminen |
 | 15.4. | 4 | nappuloiden liikkuminen sääntöjen mukaisesti, alustava pelin päätös |
 | 16.4. | 5 | shakkitilanteiden tarkistus / pelin päättyminen, koodin refaktorointia, testausta |
-| Yhteensä: | 36 |
+| 18.4. | 1 | koodin laadun parantelua |
+| 19.4. | 3 | shakkimatti ja patti + mahdollisuus uuden pelin aloittamiseen edellisen päätyttyä |
+| 22.4. | 3 | koodin refaktorointia |
+| 23.4. | 6 | koodin refaktorointia ja testausta |
+| Yhteensä: | 50 |

@@ -20,3 +20,12 @@
 - Käyttöliittymä siirretty ui-hakemistoon
 - Testattu, että torneilla ei voi liikkua muiden nappuloiden yli, ja että shakkitilanteessa kuningasta ei voi siirtää ruutuun, jossa se olisi shakissa
 
+## Viikko 5
+- Nyt myös vastustajan syötävät nappulat näkyvät liikkumisvaihtoehtoina nappulan valitessa
+- Peli päättyy pattitilanteessa shakin sääntöjen mukaisesti
+- Pelin päätyttyä voi aloittaa uuden pelin
+- Testattu, että sotilasnappulalla voi syödä vastustajan nappulan
+- Testattu, että pattiasetelma ja tilanne, jossa kuningas ei pääse liikkumaan pois shakista päättävät pelin
+- Refaktoroitu sovelluslogiikan koodia ChessService-luokassa, käyttöliittymään liittyvää koodia Board-luokassa ja siirretty pelinäkymän piirtoon liittyvä koodi GameLoop-luokasta Renderer-luokkaan
+
+
