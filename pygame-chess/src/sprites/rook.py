@@ -1,5 +1,5 @@
 import pygame
-from load_image import load_image
+from ui.load_image import load_image
 
 
 class Rook(pygame.sprite.Sprite):

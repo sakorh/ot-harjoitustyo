@@ -2,6 +2,8 @@ import pygame
 
 
 def load_image(name, color, square_size):
+    """Nappuloiden kuvien lataamisesta vastaava luokka.
+    """
     image = pygame.Surface((square_size, square_size), pygame.SRCALPHA)
     image.fill((255, 255, 255))
 
