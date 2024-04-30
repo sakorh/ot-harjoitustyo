@@ -1,5 +1,5 @@
 import unittest
-from ui.board_view import Board
+from ui.board import Board
 from services.chess_service import ChessService
 
 EMPTY_BOARD = [[0, 1, 0, 1, 0, 1, 0, 1],
@@ -25,7 +25,7 @@ SQUARE_SIZE = 90
 
 class TestChessService(unittest.TestCase):
     def setUp(self):
-        self.board = Board(EMPTY_BOARD, SQUARE_SIZE, PIECES, None, None)
+        self.board = Board(EMPTY_BOARD, SQUARE_SIZE, PIECES)
         self.board._initialize_pieces()
         self.chess_service = ChessService(self.board)
 
@@ -94,7 +94,7 @@ class TestChessService(unittest.TestCase):
                            [0, 0, 0, 0, -1, -1, 0, 0],
                            [6, 2, 4, 8, 10, 4, 2, 6]]
 
-        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_check, None, None)
+        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_check)
         board._initialize_pieces()
         chess_service = ChessService(board)
 
@@ -115,7 +115,7 @@ class TestChessService(unittest.TestCase):
                                [0, 0, 0, 0, 0, -1, -1, 0],
                                [6, 2, 4, 8, 10, 4, 2, 6]]
 
-        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_checkmate, None, None)
+        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_checkmate)
         board._initialize_pieces()
         chess_service = ChessService(board)
 
@@ -132,7 +132,7 @@ class TestChessService(unittest.TestCase):
                                [-1, -1, -1, -1, -1, 9, -1, -1],
                                [-1, -1, -1, -1, -1, -1, -1, 10]]
 
-        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_stalemate, None, None)
+        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_stalemate)
         board._initialize_pieces()
         chess_service = ChessService(board)
 
@@ -169,8 +169,8 @@ class TestChessService(unittest.TestCase):
                            [-1, -1, -1, -1, -1, -1, -1, -1],
                            [0, 0, 0, 0, -1, 0, 0, 0],
                            [6, 2, 4, 8, 10, 4, 2, 6]]
-        
-        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_check, None, None)
+
+        board = Board(EMPTY_BOARD, SQUARE_SIZE, pieces_in_check)
         board._initialize_pieces()
         chess_service = ChessService(board)
 

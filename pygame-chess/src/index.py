@@ -1,11 +1,9 @@
 import pygame
-import pygame_gui
-from ui.board_view import Board
+from ui.board import Board
 from ui.game_loop import GameLoop
 from ui.clock import Clock
 from ui.event_queue import EventQueue
 from ui.renderer import Renderer
-from ui.gui_elements import GUIElements
 from repositories.fen_repository import FENRepository
 
 
@@ -27,7 +25,6 @@ PIECES = [[7, 3, 5, 9, 11, 5, 3, 7],
           [0, 0, 0, 0, 0, 0, 0, 0],
           [6, 2, 4, 8, 10, 4, 2, 6]]
 
-
 SQUARE_SIZE = 90
 
 
@@ -40,12 +37,10 @@ def main():
     pygame.init()
 
     fen_repository = FENRepository()
-    manager = pygame_gui.UIManager((display_size+2*SQUARE_SIZE, display_size))
-    gui_elements = GUIElements(SQUARE_SIZE, manager, fen_repository)
-    board = Board(EMPTY_BOARD, SQUARE_SIZE, PIECES, manager, gui_elements)
+    board = Board(EMPTY_BOARD, SQUARE_SIZE, PIECES)
 
-    game_loop = GameLoop(board, Renderer(display, board, manager),
-                         EventQueue(), Clock(), manager, fen_repository)
+    game_loop = GameLoop(board, Renderer(display, board),
+                         EventQueue(), Clock(), fen_repository)
     game_loop.start()
 
 

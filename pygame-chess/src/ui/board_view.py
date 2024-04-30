@@ -110,7 +110,7 @@ class Board:
         if turn == "w":
             return "white"
         return "black"
-    
+
     def _draw_load_fen_text(self, display, font):
         green = (0, 255, 0)
         black = (0, 0, 0)
@@ -208,7 +208,7 @@ class Board:
                                         normalized_x, normalized_y))
         self.all_sprites.add(self.pawns, self.rooks, self.knights,
                              self.bishops, self.queens, self.kings)
-        
+
     def _kill_all_sprites(self):
         """Poistaa kaikki nappulat.
         """
@@ -221,10 +221,10 @@ class Board:
         for option in options:
             pygame.draw.circle(display, (0, 255, 0),
                                (option[0]+self.square_size//2, option[1]+self.square_size//2), 5)
-            
+
     def draw_current_square(self, display, x, y):
         pygame.draw.rect(display, (0, 255, 0), (
-                x, y, self.square_size, self.square_size), 4)
+            x, y, self.square_size, self.square_size), 4)
 
     def initialize_board(self, display, board):
         height = width = len(board)

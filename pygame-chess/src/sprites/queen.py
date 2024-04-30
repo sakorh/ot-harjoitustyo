@@ -3,15 +3,15 @@ from ui.load_image import load_image
 
 
 class Queen(pygame.sprite.Sprite):
-    def __init__(self, color, x=0, y=0):
+    def __init__(self, color, square_size, x=0, y=0):
         super().__init__()
 
         self.color = color
-        self.image = load_image("queen", color)
+        self.image = load_image("queen", color, square_size)
 
-        i = 80
-        self.directions = [(i, i), (i, -i), (-i, -i), (-i, i),
-                           (0, i), (0, -i), (-i, 0), (i, 0)]
+        self.directions = [(square_size, square_size), (square_size, -square_size),
+                           (-square_size, -square_size), (-square_size, square_size),
+                           (0, square_size), (0, -square_size), (-square_size, 0), (square_size, 0)]
 
         self.rect = self.image.get_rect()
         self.rect.x = x

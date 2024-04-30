@@ -4,6 +4,7 @@ import pygame
 class ChessService:
     """Pelin logiikasta vastaava luokka. 
     """
+
     def __init__(self, board):
         self.king_in_check = False
         self._board = board
