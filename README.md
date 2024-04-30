@@ -9,7 +9,7 @@ Sovelluksessa voi pelata kaksin pelattavaa shakkia.
 - [Changelog](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
 ### Release
-- [Release](https://github.com/sakorh/ot-harjoitustyo/releases/tag/viikko5)
+- [Release](https://github.com/sakorh/ot-harjoitustyo/releases)
 
 ### Pelin käynnistysohjeet
 - Siirry pygame-chess hakemistoon ja asenna tarvittavat riippuvuudet
