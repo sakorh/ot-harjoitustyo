@@ -83,7 +83,7 @@ class Board:
         return fen
 
     def draw_pieces_from_fen(self):
-        """Alustaa pelilaudan parametrina annetusta FEN-asetelmasta.
+        """Alustaa pelilaudan annetusta FEN-asetelmasta.
         """
         fen = self.user_text
         fen = fen.replace("\n", "")
@@ -172,7 +172,6 @@ class Board:
         self.begin = False
         self._kill_all_sprites()
         self._initialize_pieces()
-        self._fen_pieces.clear()
 
     def _initialize_pieces(self):
         if self._fen_pieces:

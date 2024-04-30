@@ -68,8 +68,8 @@ class GameLoop:
             self._board.user_text = self._board.user_text[:-1]
 
         elif self._board.input_fen and event.key == pygame.K_RETURN:
-            self._board.draw_pieces_from_fen()
-            self._chess_service.initialize_game()
+            turn = self._board.draw_pieces_from_fen()
+            self._chess_service._turn = turn
             self.x = 0
             self.y = 7*self._board.square_size
 
