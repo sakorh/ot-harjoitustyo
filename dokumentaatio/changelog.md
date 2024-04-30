@@ -28,4 +28,14 @@
 - Testattu, että pattiasetelma ja tilanne, jossa kuningas ei pääse liikkumaan pois shakista päättävät pelin
 - Refaktoroitu sovelluslogiikan koodia ChessService-luokassa, käyttöliittymään liittyvää koodia Board-luokassa ja siirretty pelinäkymän piirtoon liittyvä koodi GameLoop-luokasta Renderer-luokkaan
 
-
+## Viikko 6
+- Vuoroista vastaava ja pelin päättymisen tarkistava koodi siirretty sovelluslogiikasta vastaavaan ChessService-luokkaan
+- Lisätty näppäinkomennot nappuloiden liikuttamiseen, jotta peliä voi pelata myös ilman hiirtä
+- Näppäimillä liikuessa sen ruudun ympärillä, jossa pelaaja sillä hetkellä on, näkyy vihreät reunat
+- Shakkimatti toimii nyt ainakin pääosin oikein
+- Lisätty sovelluksen alkunäkymään mahdollisuus alustaa pelilauta omalla FEN-asetelmalla
+    - Asetelma tulee olla kirjoitettuna FEN-notaatiolla, jossa on nappulat ja se kenen vuorolla aloitetaan (esim. "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w")
+- Pelilaudan voi myös alustaa tietokantaan tallennetulla asetelmalla valitsemalla asetelman dropdown-menusta
+    - Tietokanta sisältää alustavasti shakin tavallisen aloitusasetelman
+- FENRepository-luokka vastaa tietokantaoperaatioista
+- GUIElements-luokka vastaa pygame_gui moduulin avulla luoduista käyttöliittymäelementeistä

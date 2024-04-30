@@ -17,4 +17,11 @@
 | 19.4. | 3 | shakkimatti ja patti + mahdollisuus uuden pelin aloittamiseen edellisen päätyttyä |
 | 22.4. | 3 | koodin refaktorointia |
 | 23.4. | 6 | koodin refaktorointia ja testausta |
-| Yhteensä: | 50 |
+| 25.4. | 4 | näppäinkomennot + koodin refaktorointia |
+|| 2 | alustava toimiva shakkimatti |
+| 26.4. | 3 | shakkimatin viimeistely, testien korjailua, pelin aloitusnäkymä |
+| 28.4. | 5 | tietokannan käyttöönotto, käyttöliittymän muokkausta |
+| 29.4. | 2 | sovelluslogiikan testausta |
+|| 2 | koodin refaktorointia ja käyttöliittymän muokkausta |
+| 30.4. | 5 | koodin refaktorointia, testausta, käyttöliittymän muokkausta, dokumentointia |
+| Yhteensä: | 73 |

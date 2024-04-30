@@ -9,13 +9,15 @@ Sovelluksessa voi pelata kaksin pelattavaa shakkia.
   - Oman vuoron jälkeen siis ainoastaan vastustajan nappuloita on mahdollista liikuttaa - tehty
 - Nappuloita voi liikuttaa vain shakin sääntöjen mukaisesti - tehty osittain (esim. sotilaiden korotus ja linnoittautuminen puuttuu)
 - Valitsemalla jonkin tietyn nappulan peli näyttää kaikki mahdolliset ruudut, joihin nappulan voi siirtää - tehty
-- Peli päättyy joko shakkimattiin, jossa toinen pelaaja voittaa, tai pattiin eli tasapeliin - shakkimatti tehty osittain, patti tehty
+- Peli päättyy joko shakkimattiin, jossa toinen pelaaja voittaa, tai pattiin eli tasapeliin - tehty
   - Sovellus ilmoittaa pelin loppumisesta - tehty
 - Pelin päätyttyä pelaajilla on mahdollisuus aloittaa uusi peli - tehty
-- Pelaaja voi keskeyttää pelin milloin vain
+- Pelaaja voi keskeyttää pelin meneillään olevan pelin ja aloittaa uuden milloin vain - tehty
 
 ### Mahdollisia jatkokehitysideoita
 - Kummankin pelaajan syödyt nappulat näkyvät pelilaudan vieressä
 - Peli varoittaa uhattuna olevaa pelaajaa shakkitilanteissa
 - (Mahdollisuus ajanottoon)
-- Pelilaudan alustus lukemalla FEN-notaatiolla kirjoitettu asetelma tiedostosta & pelilaudan asetelman tallennus FEN-notaatiolla tiedostoon
+- Pelilaudan alustus syöttämällä FEN-asetelma käsin - tehty osittain (koodissa ei ole vielä virheellisten syötteiden tarkistusta)
+- Pelilaudan sen hetkisen asetelman tallennus tietokantaan - tehty osittain (ei ole testattu eri tilanteissa, virheitä todennäköisesti on)
+- Pelaaja voi milloin vain valita tallentamansa asetelman ja jatkaa pelaamista siitä - tehty osittain (tallennetut asetelmat pysyvät toistaiseksi tallessa vain siihen asti kunnes sovellus suljetaan)
