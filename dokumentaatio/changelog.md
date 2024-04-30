@@ -35,7 +35,4 @@
 - Shakkimatti toimii nyt ainakin pääosin oikein
 - Lisätty sovelluksen alkunäkymään mahdollisuus alustaa pelilauta omalla FEN-asetelmalla
     - Asetelma tulee olla kirjoitettuna FEN-notaatiolla, jossa on nappulat ja se kenen vuorolla aloitetaan (esim. "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w")
-- Pelilaudan voi myös alustaa tietokantaan tallennetulla asetelmalla valitsemalla asetelman dropdown-menusta
-    - Tietokanta sisältää alustavasti shakin tavallisen aloitusasetelman
 - FENRepository-luokka vastaa tietokantaoperaatioista
-- GUIElements-luokka vastaa pygame_gui moduulin avulla luoduista käyttöliittymäelementeistä

@@ -12,12 +12,12 @@ Sovelluksessa voi pelata kaksin pelattavaa shakkia.
 - Peli päättyy joko shakkimattiin, jossa toinen pelaaja voittaa, tai pattiin eli tasapeliin - tehty
   - Sovellus ilmoittaa pelin loppumisesta - tehty
 - Pelin päätyttyä pelaajilla on mahdollisuus aloittaa uusi peli - tehty
-- Pelaaja voi keskeyttää pelin meneillään olevan pelin ja aloittaa uuden milloin vain - tehty
+- Pelaaja voi keskeyttää pelin meneillään olevan pelin ja aloittaa uuden milloin vain - (oli tehtynä, mutta odottamattomista ongelmista johtuen jouduin viime hetkellä palaamaan vanhempaan versioon projektista)
 
 ### Mahdollisia jatkokehitysideoita
 - Kummankin pelaajan syödyt nappulat näkyvät pelilaudan vieressä
 - Peli varoittaa uhattuna olevaa pelaajaa shakkitilanteissa
 - (Mahdollisuus ajanottoon)
 - Pelilaudan alustus syöttämällä FEN-asetelma käsin - tehty osittain (koodissa ei ole vielä virheellisten syötteiden tarkistusta)
-- Pelilaudan sen hetkisen asetelman tallennus tietokantaan - tehty osittain (ei ole testattu eri tilanteissa, virheitä todennäköisesti on)
-- Pelaaja voi milloin vain valita tallentamansa asetelman ja jatkaa pelaamista siitä - tehty osittain (tallennetut asetelmat pysyvät toistaiseksi tallessa vain siihen asti kunnes sovellus suljetaan)
+- Pelilaudan sen hetkisen asetelman tallennus tietokantaan - oli tehtynä osittain, ei toimi vielä
+- Pelaaja voi milloin vain valita tallentamansa asetelman ja jatkaa pelaamista siitä - oli tehtynä osittain, ei toimi vielä
