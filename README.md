@@ -2,6 +2,7 @@
 Sovelluksessa voi pelata kaksin pelattavaa shakkia.
 
 ### Dokumentaatio
+- [Käyttöohje](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 - [Arkkitehtuurikuvaus](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](https://github.com/sakorh/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
