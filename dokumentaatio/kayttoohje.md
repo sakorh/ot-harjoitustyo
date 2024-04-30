@@ -25,6 +25,6 @@ Klikkaamalla "Start Game" tekstiä peli käynnistyy shakin aloitusasetelmaan.
 
 Klikkaamalla aloitusnäkymän "Load FEN" tekstiä pelilaudan voi alustaa omalla asetelmallaan.
 
-[load-FEN](./kuvat/load_fen.png)
+![load-FEN](./kuvat/load_fen.png)
 
 Kun asetelma on syötetty, peli käynnistyy annettuun asetelmaan Enteriä painamalla. Pelilaudalla voi liikkua sekä näppäimistön nuolinäppäimillä, että hiirellä klikkailemalla. Näppäimistöltä nappulan voi valita Enterillä.
