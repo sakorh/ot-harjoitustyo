@@ -38,11 +38,11 @@ class TestChessService(unittest.TestCase):
         x = 0
 
         for pawn in pawns:
-            if pawn.color == "black" and x <= 7*SQUARE_SIZE:
+            if pawn.color == "black" and x <= 560:
                 self.assert_equal_position(pawn, x, SQUARE_SIZE)
                 self.chess_service.move_piece(pawn, dx=0, dy=SQUARE_SIZE)
                 self.assert_equal_position(pawn, x, 2*SQUARE_SIZE)
-            elif pawn.color == "white" and x <= 7*SQUARE_SIZE:
+            elif pawn.color == "white" and x <= 560:
                 self.assert_equal_position(pawn, x, 6*SQUARE_SIZE)
                 self.chess_service.move_piece(pawn, dx=0, dy=-SQUARE_SIZE)
                 self.assert_equal_position(pawn, x, 5*SQUARE_SIZE)
@@ -50,16 +50,15 @@ class TestChessService(unittest.TestCase):
 
     def test_pieces_cannot_overlap(self):
         pieces = self.board.all_sprites
-        pawns = self.board.pawns
 
-        for pawn in pawns:
-            if pawn.color == "white" and pawn.rect.x == 2*SQUARE_SIZE and pawn.rect.y == 6*SQUARE_SIZE:
-                self.chess_service.move_piece(pawn, dx=0, dy=-SQUARE_SIZE)
-                self.assert_equal_position(pawn, 2*SQUARE_SIZE, 5*SQUARE_SIZE)
         for piece in pieces:
-            if piece.color == "white" and piece.rect.x == SQUARE_SIZE and piece.rect.y == 7*SQUARE_SIZE:
-                options = self.chess_service.get_moves(piece)
-                self.assertEqual(options, [(0, 5*SQUARE_SIZE)])
+            if piece.color == "white" and piece.rect.x == 160 and piece.rect.y == 480:
+                self.chess_service.move_piece(piece, dx=0, dy=-SQUARE_SIZE)
+                self.assert_equal_position(piece, 160, 5*SQUARE_SIZE)
+            elif piece.color == "white" and piece.rect.x == 80 and piece.rect.y == 560:
+                self.chess_service.move_piece(
+                    piece, dx=SQUARE_SIZE, dy=-2*SQUARE_SIZE)
+                self.assert_equal_position(piece, 80, 7*SQUARE_SIZE)
 
     def test_rook_cannot_move_through_other_pieces(self):
         pieces = self.board.all_sprites

@@ -7,12 +7,13 @@ class GameLoop:
     """Pelisilmukasta vastaava luokka, joka lukee pelaajien syötteitä ja kutsuu sovelluslogiikan 
     metodeja pelaajien valitsemien toimintojen mukaan.
     """
-    def __init__(self, board, renderer, event_queue, clock, manager, fen_repository):
+    def __init__(self, board, renderer, event_queue, clock, display, manager, fen_repository):
         self._board = board
         self._renderer = renderer
         self._event_queue = event_queue
         self._clock = clock
         self._chess_service = ChessService(board)
+        self._display = display
         self._manager = manager
         self.x = 0
         self.y = 7*board.square_size
@@ -28,25 +29,39 @@ class GameLoop:
             self._clock.tick(60)
 
     def _handle_events(self):
-        """Käy silmukassa läpi pelaajien antamia syötteitä sekä hiiren että näppäimistön kautta.
-        Returns:
-            True, jos tapahtuma on joko hiiren klikkaus tai syöte näppäimistöltä, 
-            False jos pelaaja sulkee sovelluksen. 
-        """
+
+        if self._chess_service.game_over():
+            self._game_over = True
+
+        if self._selected_piece:
+            self._options = self._chess_service.get_moves(self._selected_piece)
+
         for event in self._event_queue.get():
             self._manager.process_events(event)
             if event.type == pygame.MOUSEBUTTONDOWN:
-                self._handle_mouse_click()
-                return True
+                x, y = pygame.mouse.get_pos()
+                if self._game_over:
+                    if self._board.new_game.collidepoint(x, y):
+                        self._chess_service.king_in_check = False
+                        self._game_over = False
+                        self._board.start_game()
+                        self._turn = "white"
 
-            if event.type in [pygame_gui.UI_BUTTON_PRESSED,
-                              pygame_gui.UI_TEXT_ENTRY_FINISHED,
-                              pygame_gui.UI_DROP_DOWN_MENU_CHANGED]:
-                self._handle_GUI_events(event)
-                return True
+                piece = self._chess_service.choose_piece(self._turn, x, y)
+                if not self._game_over and piece:
+                    self._selected_piece = piece
 
-            if event.type == pygame.KEYDOWN and not self._gui_element_selected:
-                self._handle_keyboard_input(event)
+                if self._options:
+                    if self._chess_service.choose_option(
+                            self._selected_piece, self._options, self._turn, x, y):
+                        self._options.clear()
+                        if self._selected_piece.color == "white":
+                            self._turn = "black"
+                            self._selected_piece = None
+                        else:
+                            self._turn = "white"
+                            self._selected_piece = None
+
                 return True
 
             if event.type == pygame.QUIT:
@@ -117,5 +132,4 @@ class GameLoop:
             self._gui_element_selected = False
 
     def _render(self):
-        self._renderer.render(self._chess_service.options,
-                              self._chess_service.game_over, self.x, self.y)
+        self._renderer.render(self._options, self._game_over)

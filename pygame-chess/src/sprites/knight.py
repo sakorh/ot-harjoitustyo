@@ -3,25 +3,18 @@ from ui.load_image import load_image
 
 
 class Knight(pygame.sprite.Sprite):
-    def __init__(self, color, square_size, x=0, y=0):
+    def __init__(self, color, x=0, y=0):
         super().__init__()
 
         self.color = color
-        self.image = load_image("knight", color, square_size)
-        self._square_size = square_size
+
+        self.image = load_image("knight", color)
 
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
 
     def show_options(self, x=0, y=0):
-        options = [(x-self._square_size, y+2*self._square_size),
-                   (x+self._square_size, y+2*self._square_size),
-                   (x-2*self._square_size, y-self._square_size),
-                   (x-2*self._square_size, y+self._square_size),
-                   (x+2*self._square_size, y+self._square_size),
-                   (x+2*self._square_size, y-self._square_size),
-                   (x-self._square_size, y-2*self._square_size),
-                   (x+self._square_size, y-2*self._square_size)]
-        return [o for o in options if (
-            0 <= o[0] <= 7*self._square_size and 0 <= o[1] <= 7*self._square_size)]
+        options = [(x-80, y+160), (x+80, y+160), (x-160, y-80), (x-160, y+80),
+                   (x+160, y+80), (x+160, y-80), (x-80, y-160), (x+80, y-160)]
+        return [o for o in options if 0 <= o[0] <= 560 and 0 <= o[1] <= 560]
