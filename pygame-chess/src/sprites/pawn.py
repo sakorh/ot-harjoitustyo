@@ -3,6 +3,9 @@ from ui.load_image import load_image
 
 
 class Pawn(pygame.sprite.Sprite):
+    """Sotilasnappulan luova luokka.
+    """
+
     def __init__(self, color, square_size, x=0, y=0):
         super().__init__()
         self.color = color
@@ -14,6 +17,9 @@ class Pawn(pygame.sprite.Sprite):
         self.rect.y = y
 
     def check_for_enemy(self, x=0, y=0):
+        """Palauttaa parametreinä annettujen koordinaattien kohdalta katsottuna ne ruudut,
+        joista vastustajan nappulan voi syödä.
+        """
         black = [(x-self._square_size, y+self._square_size),
                  (x+self._square_size, y+self._square_size)]
         white = [(x-self._square_size, y-self._square_size),
@@ -27,6 +33,8 @@ class Pawn(pygame.sprite.Sprite):
             0 <= option[0] <= 7*self._square_size and 0 <= option[1])]
 
     def show_options(self, x=0, y=0):
+        """Palauttaa listan niiden ruutujen koordinaateista, joihin sotilasnappula voi siirtyä.
+        """
         if self.color == "black" and 0 <= y <= self._square_size:
             return [(x, y+self._square_size), (x, y+2*self._square_size)]
         if self.color == "black":

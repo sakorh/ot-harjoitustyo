@@ -3,6 +3,13 @@ import pygame
 
 def load_image(name, color, square_size):
     """Nappuloiden kuvien lataamisesta vastaava luokka.
+
+    Args:
+        color: nappulan väri,
+        square_size: pelilaudan ruudun koko, jonka mukaan nappulan koko asetetaan.
+
+    Returns:
+        Palauttaa nappulan kuvan.
     """
     image = pygame.Surface((square_size, square_size), pygame.SRCALPHA)
     image.fill((255, 255, 255))

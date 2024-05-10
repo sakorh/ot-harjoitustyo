@@ -3,6 +3,9 @@ from ui.load_image import load_image
 
 
 class King(pygame.sprite.Sprite):
+    """Kuningasnappulan luova luokka.
+    """
+
     def __init__(self, color, square_size, x=0, y=0):
         super().__init__()
 
@@ -15,6 +18,8 @@ class King(pygame.sprite.Sprite):
         self.rect.y = y
 
     def show_options(self, x=0, y=0):
+        """Palauttaa listan ruuduista, joihin kuningasnappulaa voi mahdollisesti siirtää.
+        """
         options = [(x, y+self._square_size), (x, y-self._square_size), (x+self._square_size, y),
                    (x-self._square_size, y), (x -
                                               self._square_size, y-self._square_size),

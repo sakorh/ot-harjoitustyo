@@ -3,6 +3,9 @@ from ui.load_image import load_image
 
 
 class Queen(pygame.sprite.Sprite):
+    """Kuningatarnappulan luova luokka.
+    """
+
     def __init__(self, color, square_size, x=0, y=0):
         super().__init__()
 
