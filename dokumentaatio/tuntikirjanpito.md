@@ -24,4 +24,9 @@
 | 29.4. | 2 | sovelluslogiikan testausta |
 || 2 | koodin refaktorointia ja käyttöliittymän muokkausta |
 | 30.4. | 5 | koodin refaktorointia, testausta, käyttöliittymän muokkausta, dokumentointia |
-| Yhteensä: | 73 |
+| 3.5. | 2 | pelilaudan asetelman tallennus tietokantaan ja tallennettujen asetelmien haku käyttöliittymän kautta |
+| 7.5. | 2 | sqlalchemy & alembic käyttöön, tietokantaoperaatiot asetelmien tallennukseen ja hakuun, mahdollisuus alustaa pelilauta aikaisemmin tallennetusta asetelmasta |
+| 8.5. | 2 | mahdollisuus poistaa tallennettu asetelma tietokannasta |
+| 9.5. | 3 | käyttöliittymän muokkausta, virheilmoitukset väärillä syötteillä, manuaalista testausta ja virheiden korjausta |
+| 10.5. | 8 | käyttöliittymän muokkausta, manuaalista testausta ja virheiden korjausta, tietokannan testausta, dokumentointia |
+| Yhteensä: | 90 |

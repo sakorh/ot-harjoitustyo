@@ -36,3 +36,9 @@
 - Lisätty sovelluksen alkunäkymään mahdollisuus alustaa pelilauta omalla FEN-asetelmalla
     - Asetelma tulee olla kirjoitettuna FEN-notaatiolla, jossa on nappulat ja se kenen vuorolla aloitetaan (esim. "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w")
 - FENRepository-luokka vastaa tietokantaoperaatioista
+
+## Viikko 7
+- Lisätty sovelluksen alkunäkymään mahdollisuus alustaa pelilauta aiemmin tallennetusta asetelmasta
+- Lisätty mahdollisuus tallentaa pelilaudan asetelma tietokantaan
+- Lisätty mahdollisuus palata sovelluksen alkunäkymään ja aloittaa uusi peli myös kesken pelin
+- Testattu, että FENRepository-luokan tietokantaoperaatiot toimivat oikein
