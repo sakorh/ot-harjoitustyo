@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Sovelluksen saa käyttöön lataamalla viimeisimmän releasen lähdekoodin.
+Sovelluksen saa käyttöön lataamalla viimeisimmän [releasen](https://github.com/sakorh/ot-harjoitustyo/releases) lähdekoodin.
 
 ## Pelin käynnistäminen
 
