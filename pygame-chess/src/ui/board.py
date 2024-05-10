@@ -22,7 +22,6 @@ class Board:
         self.queens = pygame.sprite.Group()
         self.kings = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
-        self._font = None
         self.error_message = ""
         self.new_game = None
         self.begin = True
@@ -160,7 +159,6 @@ class Board:
         if self.error_message != "Incorrect notation. Try again.":
             self.error_message = ""
         base_font = pygame.font.Font(None, 32)
-        self._font.set_point_size(32)
         x = y = 8*self.square_size
         input_fen_rect = pygame.Rect(200, 200, 7*self.square_size, 40)
         input_fen_rect.center = (x // 2, y // 2)
@@ -169,9 +167,9 @@ class Board:
         display.blit(text_surface, (input_fen_rect.x +
                      5, input_fen_rect.y+5))
         input_fen_rect.w = max(100, text_surface.get_width()+10)
-        self._draw_load_fen_text(display, x // 2, 5*self.square_size // 2)
+        self._draw_load_fen_text(display, x // 2, 5*self.square_size // 2, 32)
         self._draw_new_game_text(
-            display, "Go Back", 2*self.square_size, self.square_size)
+            display, "Go Back", 2*self.square_size, self.square_size, 32)
 
     def load_name_view(self, display):
         """Piirtää näkymän, jossa pelaaja voi syöttää tallennettavalle asetelmalle nimen.
@@ -179,11 +177,12 @@ class Board:
         Args:
             display: pygame-elementti, jonka sisälle pelilauta piirretään.
         """
+        font = pygame.font.Font('freesansbold.ttf', 22)
         base_font = pygame.font.Font(None, 32)
         x = 18*self.square_size
         y = 3*self.square_size
         x = y = 8*self.square_size
-        enter_name_text = self._font.render(
+        enter_name_text = font.render(
             "Enter a name (max 50 characters):", True, self._green, self._black)
         enter_name_rect = enter_name_text.get_rect()
         enter_name_rect.center = (8*self.square_size // 2, 3*self.square_size)
@@ -196,27 +195,30 @@ class Board:
                      5, input_name_rect.y+5))
         input_name_rect.w = max(100, text_surface.get_width()+10)
 
-    def _draw_load_fen_text(self, display, x, y):
+    def _draw_load_fen_text(self, display, x, y, font_size):
         """Piirtää nappulan Load FEN -tekstillä.
         """
-        fen_text = self._font.render(
+        font = pygame.font.Font('freesansbold.ttf', font_size)
+        fen_text = font.render(
             'Load FEN', True, self._green, self._black)
         self.fen = fen_text.get_rect()
         self.fen.center = (x, y)
         display.blit(fen_text, self.fen)
 
-    def _draw_new_game_text(self, display, text, x, y):
+    def _draw_new_game_text(self, display, text, x, y, font_size):
         """Piirtää nappulan, jota klikkaamalla voi aloittaa uuden pelin.
         """
-        new_game_text = self._font.render(text, True, self._green, self._black)
+        font = pygame.font.Font('freesansbold.ttf', font_size)
+        new_game_text = font.render(text, True, self._green, self._black)
         self.new_game = new_game_text.get_rect()
         self.new_game.center = (x // 2, y)
         display.blit(new_game_text, self.new_game)
 
-    def _draw_choose_fen_text(self, display, x, y):
+    def _draw_choose_fen_text(self, display, x, y, font_size):
         """Piirtää nappulan, jota klikkaamalla saa näkyviin tietokantaan tallennetut asetelmat.
         """
-        choose_fen_text = self._font.render(
+        font = pygame.font.Font('freesansbold.ttf', font_size)
+        choose_fen_text = font.render(
             "Choose FEN", True, self._green, self._black)
         self.choose_fen = choose_fen_text.get_rect()
         self.choose_fen.center = (x // 2, y)
@@ -229,19 +231,19 @@ class Board:
         myös Load Previous -nappi, jota painamalla voi palata aiemmin näytettyihin asetelmiin yksi kerrallaan.
         Näkymien nimien viereen piirretään myös Delete -nappi, jota painamalla asetelman voi poistaa tietokannasta.
         """
-        self._font.set_point_size(24)
+        font = pygame.font.Font('freesansbold.ttf', 24)
         idx = self.fens_page
         self.fen_options = []
         x = 8*self.square_size
         if self.fens_page > 0 and len(self.fens) > 4:
-            previous_text = self._font.render(
+            previous_text = font.render(
                 "Load Previous", True, (255, 255, 0), self._black)
             self.previous = previous_text.get_rect()
             self.previous.midright = self.load_more.midleft
             display.blit(previous_text, self.previous)
         if len(self.fens[idx:]) > 4:
             fens = self.fens[idx:idx+4]
-            load_more_text = self._font.render(
+            load_more_text = font.render(
                 "Load More", True, (255, 255, 0), self._black)
             self.load_more = load_more_text.get_rect()
             self.load_more.midleft = (x // 2, 7.5*self.square_size)
@@ -249,11 +251,11 @@ class Board:
         else:
             fens = self.fens[idx:]
         for fen in fens:
-            fen_text = self._font.render(fen, True, self._green, self._black)
+            fen_text = font.render(fen, True, self._green, self._black)
             fen_text_rect = fen_text.get_rect()
             fen_text_rect.center = (
                 x // 2, 5.5*self.square_size+len(self.fen_options)*0.5*self.square_size)
-            delete_text = self._font.render(
+            delete_text = font.render(
                 "Delete", True, (255, 0, 0), self._black)
             delete_text_rect = delete_text.get_rect()
             delete_text_rect.topleft = fen_text_rect.topright
@@ -264,7 +266,6 @@ class Board:
     def begin_view(self, display):
         """Piirtää sovelluksen alkunäkymän.
         """
-        self._font = pygame.font.Font('freesansbold.ttf', 32)
         if self.error_message != "You have no FENs saved.":
             self.error_message = ""
         self._kill_all_sprites()
@@ -273,30 +274,31 @@ class Board:
         self.input_name = False
         x = 8*self.square_size
         y = 2.5*self.square_size
-        self._draw_new_game_text(display, "Start Game", x, y)
-        self._draw_load_fen_text(display, x // 2, 3.5*self.square_size)
-        self._draw_choose_fen_text(display, x, 4.5*self.square_size)
+        self._draw_new_game_text(display, "Start Game", x, y, 32)
+        self._draw_load_fen_text(display, x // 2, 3.5*self.square_size, 32)
+        self._draw_choose_fen_text(display, x, 4.5*self.square_size, 32)
 
     def end_game(self, display):
         """Piirtää pelin päättymisnäkymän.
         """
+        font = pygame.font.Font('freesansbold.ttf', 32)
         self._kill_all_sprites()
         self._fen_pieces.clear()
-        self._font.set_point_size(32)
-        text = self._font.render('Game Over', True, self._green, self._black)
+        text = font.render('Game Over', True, self._green, self._black)
         text_rect = text.get_rect()
         x = 8*self.square_size
         y = 2.5*self.square_size
         text_rect.center = (x // 2, y)
         display.blit(text, text_rect)
         self._draw_new_game_text(
-            display, "Start New Game", x, 3.5*self.square_size)
-        self._draw_choose_fen_text(display, x, 4.5*self.square_size)
+            display, "Start New Game", x, 3.5*self.square_size, 32)
+        self._draw_choose_fen_text(display, x, 4.5*self.square_size, 32)
 
-    def _draw_save_board_text(self, display, text, x, y):
+    def _draw_save_board_text(self, display, text, x, y, font_size):
         """Piirtää Save Board -tekstin, jota klikkaamalla voi tallentaa pelilaudan asetelman.
         """
-        save_board_text = self._font.render(
+        font = pygame.font.Font('freesansbold.ttf', font_size)
+        save_board_text = font.render(
             text, True, self._green, self._black)
         self.save_board = save_board_text.get_rect()
         self.save_board.center = (x // 2, y)
@@ -308,7 +310,8 @@ class Board:
         Args:
             display: pygame-elementti, jonka sisälle pelilauta piirretään.
         """
-        error_text = self._font.render(
+        font = pygame.font.Font('freesansbold.ttf', 24)
+        error_text = font.render(
             self.error_message, True, (255, 0, 0), self._black)
         error_text_rect = error_text.get_rect()
         error_text_rect.center = (
@@ -322,11 +325,10 @@ class Board:
         Args:
             display: pygame-elementti, jonka sisälle pelilauta piirretään.
         """
-        self._font.set_point_size(22)
         self._draw_save_board_text(
-            display, "Save Board", 18*self.square_size, 2.5*self.square_size)
+            display, "Save Board", 18*self.square_size, 2.5*self.square_size, 22)
         self._draw_new_game_text(
-            display, "Start New Game", 18*self.square_size, 2*self.square_size)
+            display, "Start New Game", 18*self.square_size, 2*self.square_size, 22)
 
     def start_game(self):
         """Poistaa kaikki mahdolliset edellisen pelin nappulat ja virheilmoitukset, peruuttaa mahdolliset 
